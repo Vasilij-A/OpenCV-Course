@@ -11,10 +11,14 @@ using namespace cv;
 
 int main() {
 
-	std::string path = "Resources/test.png";
-	Mat img = imread(path);
-	imshow("Image", img);
-	waitKey(0);
+	std::string path = "Resources/test_video.mp4";
+    VideoCapture cap(path);
+	Mat img;
 
+    while (true) {
+        cap.read(img);
+        imshow("Video", img);
+        waitKey(20);
+    }
     return 0;
 }
