@@ -1,0 +1,52 @@
+    OpenCV Course
+    -------------
+
+#include <opencv2/imgcodecs.hpp>
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
+#include <iostream>
+
+using namespace cv;
+
+int main() {
+    // ...
+
+}
+
+Библиотеки -> /usr/include/opencv4/opencv2 =>
+
+g++ -I/usr/include/opencv4/ -o filename files.cpp \
+    -lopencv_core \
+    -lopencv_imgcodecs \
+    -lopencv_highgui \
+    -lopencv_imgproc \
+    -lopencv_videoio
+------------------------------------------------------------------
+    Здесь указаны следующие библиотеки:
+
+        core: основная библиотека OpenCV.
+        imgcodecs: поддержка чтения изображений.
+        highgui: работа с окнами и отображением изображений.
+        imgproc: обработка изображений.
+        videoio: работа с видеопотоком.
+------------------------------------------------------------------
+------------------------------------------------------------------
+Порядок имеет значение! Например, сначала идут исходники (*.cpp), потом включаются заголовочные файлы (-I...), а затем идет список библиотек (-l...). Правильный порядок помогает избежать неопределённых ссылок во время линковки.
+
+Таким образом, пример команды сборки может выглядеть следующим образом:
+
+g++ source_code_files.cpp -I/usr/include/opencv4/ -lopencv_core -lopencv_imgcodecs -lopencv_highgui -lopencv_imgproc -lopencv_videoio -o filename
+------------------------------------------------------------------
+
+    Для большей удобности можно вынести файлы исходников в конец
+
+g++ -I/usr/include/opencv4/ -lopencv_core -lopencv_imgcodecs -lopencv_highgui -lopencv_imgproc -o filename files.cpp
+
+g++ -I/usr/include/opencv4/ \
+    -lopencv_core \
+    -lopencv_imgcodecs \
+    -lopencv_highgui \
+    -lopencv_imgproc \
+    -lopencv_videoio \
+    -o filename files.cpp
+
