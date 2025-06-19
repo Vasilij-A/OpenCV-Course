@@ -20,6 +20,7 @@ int main() {
     resize(img, imgResize, Size(), 0.5, 0.5);
 
     // Обрезка изображения
+    // Rect создает прямоугольник. Указываем ширину и высоту
     Rect roi(200, 50, 300, 350); // Roi - region on interest
     imgCrop = img(roi);
     imshow("Image", img);
