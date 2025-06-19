@@ -8,9 +8,17 @@
 
 using namespace cv;
 
+////////// OpenCV Course //////////
+
 int main() {
     // ...
+    std::string path = "path_to_image";
+    Mat img = imread(path);
 
+    imshow("Image", img);
+    waitKey(0); // количество милисекунд
+
+    return 0;
 }
 
 Библиотеки -> /usr/include/opencv4/opencv2 =>
